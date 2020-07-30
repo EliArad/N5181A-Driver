@@ -36,6 +36,7 @@
             this.txtPower = new System.Windows.Forms.TextBox();
             this.chkOnOff = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.chkReset = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -115,11 +116,22 @@
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             // 
+            // chkReset
+            // 
+            this.chkReset.AutoSize = true;
+            this.chkReset.Location = new System.Drawing.Point(509, 48);
+            this.chkReset.Name = "chkReset";
+            this.chkReset.Size = new System.Drawing.Size(54, 17);
+            this.chkReset.TabIndex = 7;
+            this.chkReset.Text = "Reset";
+            this.chkReset.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(634, 349);
+            this.Controls.Add(this.chkReset);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.cmbLanVisaAddress);
             this.Controls.Add(this.btnConnect);
@@ -129,6 +141,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -142,6 +155,7 @@
         private System.Windows.Forms.TextBox txtPower;
         private System.Windows.Forms.CheckBox chkOnOff;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.CheckBox chkReset;
     }
 }
 

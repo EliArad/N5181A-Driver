@@ -45,7 +45,7 @@ namespace SignalGeneratorTest
             if (cmbLanVisaAddress.SelectedIndex == -1)
                 return;
             
-            if (m_signal.Initialize(m_deviceList[cmbLanVisaAddress.SelectedIndex].VisaAddress, out N5181ASignalGeneator.DriverIdentity di, out string outMessage) == false)
+            if (m_signal.Initialize(m_deviceList[cmbLanVisaAddress.SelectedIndex].VisaAddress, chkReset.Checked , out N5181ASignalGeneator.DriverIdentity di, out string outMessage) == false)
             {
                 MessageBox.Show("Failed to connect: " + outMessage);
                 return;

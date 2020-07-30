@@ -25,7 +25,7 @@ namespace N5181ASignalGeneatorApi
             public string SerialNumber;
             public bool Simulate;
         }
-        public bool Initialize(string visaName, out DriverIdentity di, out string outMessage)
+        public bool Initialize(string visaName, bool reset, out DriverIdentity di, out string outMessage)
         {
             di = new DriverIdentity();
             outMessage = string.Empty;
@@ -49,7 +49,7 @@ namespace N5181ASignalGeneatorApi
                 string initOptions = "QueryInstrStatus=true, Simulate=false, DriverSetup= Model=, Trace=false, TraceName=c:\\temp\\traceOut";
 
                 bool idquery = true;
-                bool reset = true;
+               
 
                 // Initialize the driver.  See driver help topic "Initializing the IVI-COM Driver" for additional information
                 driver.Initialize(resourceDesc, idquery, reset, initOptions);
