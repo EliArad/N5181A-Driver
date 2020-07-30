@@ -84,6 +84,10 @@
       <Project>{af8c3991-02a1-4b4d-8ef0-89da3a8ebdf7}</Project>
       <Name>KeysightFindDevices</Name>
     </ProjectReference>
+    <ProjectReference Include="..\N5181ASignalGeneator\N5181ASignalGeneator.csproj">
+      <Project>{df7d8cc0-febe-4ea7-aba9-33f687d20cd4}</Project>
+      <Name>N5181ASignalGeneator</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

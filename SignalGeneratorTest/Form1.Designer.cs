@@ -30,11 +30,13 @@
         {
             this.btnConnect = new System.Windows.Forms.Button();
             this.cmbLanVisaAddress = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtFrequency = new System.Windows.Forms.TextBox();
             this.btnSetFreq = new System.Windows.Forms.Button();
             this.btnSetPower = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.txtPower = new System.Windows.Forms.TextBox();
+            this.chkOnOff = new System.Windows.Forms.CheckBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnConnect
@@ -45,6 +47,7 @@
             this.btnConnect.TabIndex = 0;
             this.btnConnect.Text = "&Connect";
             this.btnConnect.UseVisualStyleBackColor = true;
+            this.btnConnect.Click += new System.EventHandler(this.btnConnect_Click);
             // 
             // cmbLanVisaAddress
             // 
@@ -54,64 +57,78 @@
             this.cmbLanVisaAddress.Size = new System.Drawing.Size(362, 21);
             this.cmbLanVisaAddress.TabIndex = 1;
             // 
-            // textBox1
+            // txtFrequency
             // 
-            this.textBox1.Location = new System.Drawing.Point(72, 144);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 2;
+            this.txtFrequency.Location = new System.Drawing.Point(20, 32);
+            this.txtFrequency.Name = "txtFrequency";
+            this.txtFrequency.Size = new System.Drawing.Size(100, 20);
+            this.txtFrequency.TabIndex = 2;
             // 
             // btnSetFreq
             // 
-            this.btnSetFreq.Location = new System.Drawing.Point(187, 144);
+            this.btnSetFreq.Location = new System.Drawing.Point(135, 32);
             this.btnSetFreq.Name = "btnSetFreq";
             this.btnSetFreq.Size = new System.Drawing.Size(86, 23);
             this.btnSetFreq.TabIndex = 3;
             this.btnSetFreq.Text = "&Set Frequnecy";
             this.btnSetFreq.UseVisualStyleBackColor = true;
+            this.btnSetFreq.Click += new System.EventHandler(this.btnSetFreq_Click);
             // 
             // btnSetPower
             // 
-            this.btnSetPower.Location = new System.Drawing.Point(187, 186);
+            this.btnSetPower.Location = new System.Drawing.Point(135, 74);
             this.btnSetPower.Name = "btnSetPower";
             this.btnSetPower.Size = new System.Drawing.Size(75, 23);
             this.btnSetPower.TabIndex = 5;
             this.btnSetPower.Text = "&Set Power";
             this.btnSetPower.UseVisualStyleBackColor = true;
+            this.btnSetPower.Click += new System.EventHandler(this.btnSetPower_Click);
             // 
-            // textBox2
+            // txtPower
             // 
-            this.textBox2.Location = new System.Drawing.Point(72, 186);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 4;
+            this.txtPower.Location = new System.Drawing.Point(20, 74);
+            this.txtPower.Name = "txtPower";
+            this.txtPower.Size = new System.Drawing.Size(100, 20);
+            this.txtPower.TabIndex = 4;
             // 
-            // checkBox1
+            // chkOnOff
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(72, 230);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(90, 17);
-            this.checkBox1.TabIndex = 6;
-            this.checkBox1.Text = "Power On Off";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.chkOnOff.AutoSize = true;
+            this.chkOnOff.Location = new System.Drawing.Point(20, 118);
+            this.chkOnOff.Name = "chkOnOff";
+            this.chkOnOff.Size = new System.Drawing.Size(90, 17);
+            this.chkOnOff.TabIndex = 6;
+            this.chkOnOff.Text = "Power On Off";
+            this.chkOnOff.UseVisualStyleBackColor = true;
+            this.chkOnOff.CheckedChanged += new System.EventHandler(this.chkOnOff_CheckedChanged);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.btnSetFreq);
+            this.groupBox1.Controls.Add(this.chkOnOff);
+            this.groupBox1.Controls.Add(this.txtFrequency);
+            this.groupBox1.Controls.Add(this.btnSetPower);
+            this.groupBox1.Controls.Add(this.txtPower);
+            this.groupBox1.Location = new System.Drawing.Point(60, 97);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(443, 181);
+            this.groupBox1.TabIndex = 7;
+            this.groupBox1.TabStop = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(634, 349);
-            this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.btnSetPower);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.btnSetFreq);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.cmbLanVisaAddress);
             this.Controls.Add(this.btnConnect);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -119,11 +136,12 @@
 
         private System.Windows.Forms.Button btnConnect;
         private System.Windows.Forms.ComboBox cmbLanVisaAddress;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtFrequency;
         private System.Windows.Forms.Button btnSetFreq;
         private System.Windows.Forms.Button btnSetPower;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.TextBox txtPower;
+        private System.Windows.Forms.CheckBox chkOnOff;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
 
